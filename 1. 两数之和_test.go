@@ -18,7 +18,7 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
-func Test_1(t *testing.T) {
+func Test_twoSum(t *testing.T) {
 	t.Log(twoSum([]int{0, 4, 3, 0}, 0))
 	t.Log(twoSum([]int{-3, 4, 3, 90}, 0))
 }

@@ -16,7 +16,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 }
 
-func TestName(t *testing.T) {
+func Test_findMedianSortedArrays(t *testing.T) {
 	t.Log(findMedianSortedArrays([]int{1, 3}, []int{2}))
 	t.Log(findMedianSortedArrays([]int{1, 1}, []int{1, 2}))
 }

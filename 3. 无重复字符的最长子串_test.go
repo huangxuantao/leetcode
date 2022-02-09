@@ -35,7 +35,7 @@ func lengthOfLongestSubstring(s string) int {
 	return lMax
 }
 
-func Test1(t *testing.T) {
+func Test_lengthOfLongestSubstring(t *testing.T) {
 	//t.Log(lengthOfLongestSubstring("abcabcbb"))
 	//t.Log(lengthOfLongestSubstring("bbbbb"))
 	//t.Log(lengthOfLongestSubstring("pwwkew"))
