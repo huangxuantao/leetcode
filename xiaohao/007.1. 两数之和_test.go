@@ -1,26 +1,16 @@
 package xiaohao
 
 import (
-	"sort"
 	"testing"
 )
 
 func twoSum(nums []int, target int) []int {
 	l := len(nums)
-	sort.Ints(nums)
 
 	for i := 0; i < l; i++ {
 		numsI := nums[i]
-		if numsI > target {
-			continue
-		}
-
 		for j := i + 1; j < l; j++ {
 			numsJ := nums[j]
-			if numsJ > target {
-				break
-			}
-
 			if numsI+numsJ == target {
 				return []int{i, j}
 			}
@@ -30,9 +20,23 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
+func twoSum2(nums []int, target int) []int {
+	numMap := make(map[int]int)
+	for i, num := range nums {
+		if v, has := numMap[target-num]; has {
+			return []int{i, v}
+		}
+		numMap[num] = i
+	}
+
+	return nil
+}
+
 func Test_twoSum(t *testing.T) {
 	t.Log(twoSum([]int{0, 4, 3, 0}, 0))
 	t.Log(twoSum([]int{-3, 4, 3, 90}, 0))
+	t.Log(twoSum2([]int{3, 2, 4}, 6))
+	t.Log(twoSum2([]int{3, 3}, 6))
 }
 
 func Benchmark_1(b *testing.B) {
