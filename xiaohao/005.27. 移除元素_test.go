@@ -18,6 +18,17 @@ func removeElement(nums []int, val int) int {
 	return l
 }
 
+func removeDuplicates(nums []int) int {
+	for i := 0; i+1 < len(nums); {
+		if nums[i] == nums[i+1] {
+			nums = append(nums[:i], nums[:i+1]...)
+		} else {
+			i++
+		}
+	}
+	return len(nums)
+}
+
 func Test_removeElement(t *testing.T) {
 	nums := []int{0, 1, 2, 2, 3, 0, 4, 2}
 	t.Log(removeElement(nums, 2))

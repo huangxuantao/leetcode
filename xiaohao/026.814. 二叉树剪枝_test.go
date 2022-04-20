@@ -11,18 +11,14 @@ func pruneTree(root *TreeNode) *TreeNode {
 			root.Right = pruneTree(root.Right)
 			return root
 		}
-
 	} else {
 		if root.Left != nil || root.Right != nil {
 			root.Left = pruneTree(root.Left)
 			root.Right = pruneTree(root.Right)
-
-			if root.Left == nil && root.Right == nil {
-				root = nil
-			}
-			return root
 		}
-		root = nil
+		if root.Left == nil && root.Right == nil {
+			root = nil
+		}
 	}
 
 	return root
